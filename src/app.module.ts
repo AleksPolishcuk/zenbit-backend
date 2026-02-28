@@ -11,13 +11,20 @@ import { ApplicationsModule } from './applications/applications.module';
     ConfigModule.forRoot({ isGlobal: true }),
     TypeOrmModule.forRootAsync({
       imports: [ConfigModule],
-      useFactory: (config: ConfigService) => ({
-        type: 'postgres',
-        url: config.get<string>('DATABASE_URL'),
-        autoLoadEntities: true,
-        synchronize: true,
-      }),
       inject: [ConfigService],
+      useFactory: (config: ConfigService) => {
+        const url = config.get<string>('DATABASE_URL');
+
+        return {
+          type: 'postgres',
+          url,
+          autoLoadEntities: true,
+          synchronize: true, // або false якщо є міграції
+          ssl: url?.includes('render.com')
+            ? { rejectUnauthorized: false }
+            : false,
+        };
+      },
     }),
     AuthModule,
     UsersModule,
