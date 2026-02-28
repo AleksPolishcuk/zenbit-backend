@@ -12,8 +12,10 @@ async function bootstrap() {
 
   app.useStaticAssets(join(__dirname, '..', 'public'));
 
+  const allowedOrigin = process.env.FRONTEND_ORIGIN || 'http://localhost:5173';
+
   app.enableCors({
-    origin: 'http://localhost:5173',
+    origin: allowedOrigin,
     credentials: true,
   });
 
