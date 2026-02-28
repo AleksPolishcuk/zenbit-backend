@@ -12,22 +12,11 @@ async function bootstrap() {
 
   app.useStaticAssets(join(__dirname, '..', 'public'));
 
-  const allowlist = new Set([
-    'http://localhost:5173',
-    'https://zenbit-frontend-weld.vercel.app',
-  ]);
+  const allowedOrigin = process.env.FRONTEND_ORIGIN || 'http://localhost:5173';
 
   app.enableCors({
-    origin: (origin, cb) => {
-      if (!origin) return cb(null, true);
-
-      if (allowlist.has(origin)) return cb(null, true);
-
-      return cb(new Error(`CORS blocked for origin: ${origin}`), false);
-    },
-    credentials: false, // ти використовуєш Bearer token, не cookies
-    methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Authorization'],
+    origin: allowedOrigin,
+    credentials: true,
   });
 
   app.useGlobalPipes(new ValidationPipe({ whitelist: true }));
