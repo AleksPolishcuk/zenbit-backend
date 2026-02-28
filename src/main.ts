@@ -10,8 +10,6 @@ import * as yaml from 'js-yaml';
 async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
 
-  app.useStaticAssets(join(__dirname, '..', 'public'));
-
   const allowedOrigin = process.env.FRONTEND_ORIGIN || 'http://localhost:5173';
 
   app.enableCors({

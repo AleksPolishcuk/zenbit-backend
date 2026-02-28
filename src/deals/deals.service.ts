@@ -11,51 +11,49 @@ export class DealsService implements OnModuleInit {
   ) {}
 
   async onModuleInit() {
-    const count = await this.dealRepo.count();
-    if (count === 0) {
-      await this.dealRepo.save([
-        {
-          title: 'The Marina Torch',
-          imageUrl:
-            'https://zenbit-backend-pdc6.onrender.com/images/marina-torch.jpg',
-          totalPrice: 6500000,
-          yieldPercent: 9.25,
-          soldPercent: 75,
-          ticketPrice: 60000,
-          daysLeft: 150,
-        },
-        {
-          title: 'HHHR Tower',
-          imageUrl:
-            'https://zenbit-backend-pdc6.onrender.com/images/hhhr-tower.jpg',
-          totalPrice: 6500000,
-          yieldPercent: 9.25,
-          soldPercent: 75,
-          ticketPrice: 60000,
-          daysLeft: 150,
-        },
-        {
-          title: 'Ocean Peaks',
-          imageUrl:
-            'https://zenbit-backend-pdc6.onrender.com/images/ocean-peaks.jpg',
-          totalPrice: 6500000,
-          yieldPercent: 9.25,
-          soldPercent: 75,
-          ticketPrice: 60000,
-          daysLeft: 150,
-        },
-        {
-          title: 'Al Yaqoub Tower',
-          imageUrl:
-            'https://zenbit-backend-pdc6.onrender.com/images/al-yaqoub-tower.jpg',
-          totalPrice: 6500000,
-          yieldPercent: 9.25,
-          soldPercent: 75,
-          ticketPrice: 60000,
-          daysLeft: 150,
-        },
-      ]);
-    }
+    await this.dealRepo.delete({}); // clear old records
+    await this.dealRepo.save([
+      {
+        title: 'The Marina Torch',
+        imageUrl:
+          'https://images.unsplash.com/photo-1567521464027-f127ff144326?w=800',
+        totalPrice: 6500000,
+        yieldPercent: 9.25,
+        soldPercent: 75,
+        ticketPrice: 60000,
+        daysLeft: 150,
+      },
+      {
+        title: 'HHHR Tower',
+        imageUrl:
+          'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800',
+        totalPrice: 6500000,
+        yieldPercent: 9.25,
+        soldPercent: 75,
+        ticketPrice: 60000,
+        daysLeft: 150,
+      },
+      {
+        title: 'Ocean Peaks',
+        imageUrl:
+          'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800',
+        totalPrice: 6500000,
+        yieldPercent: 9.25,
+        soldPercent: 75,
+        ticketPrice: 60000,
+        daysLeft: 150,
+      },
+      {
+        title: 'Al Yaqoub Tower',
+        imageUrl:
+          'https://images.unsplash.com/photo-1582407947304-fd86f28f958f?w=800',
+        totalPrice: 6500000,
+        yieldPercent: 9.25,
+        soldPercent: 75,
+        ticketPrice: 60000,
+        daysLeft: 150,
+      },
+    ]);
   }
 
   findAll(): Promise<Deal[]> {
