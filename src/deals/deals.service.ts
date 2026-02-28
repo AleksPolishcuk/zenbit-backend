@@ -16,7 +16,8 @@ export class DealsService implements OnModuleInit {
       await this.dealRepo.save([
         {
           title: 'The Marina Torch',
-          imageUrl: 'http://localhost:3000/images/marina-torch.jpg',
+          imageUrl:
+            'https://zenbit-backend-pdc6.onrender.com/images/marina-torch.jpg',
           totalPrice: 6500000,
           yieldPercent: 9.25,
           soldPercent: 75,
@@ -25,7 +26,8 @@ export class DealsService implements OnModuleInit {
         },
         {
           title: 'HHHR Tower',
-          imageUrl: 'http://localhost:3000/images/hhhr-tower.jpg',
+          imageUrl:
+            'https://zenbit-backend-pdc6.onrender.com/images/hhhr-tower.jpg',
           totalPrice: 6500000,
           yieldPercent: 9.25,
           soldPercent: 75,
@@ -34,7 +36,8 @@ export class DealsService implements OnModuleInit {
         },
         {
           title: 'Ocean Peaks',
-          imageUrl: 'http://localhost:3000/images/ocean-peaks.jpg',
+          imageUrl:
+            'https://zenbit-backend-pdc6.onrender.com/images/ocean-peaks.jpg',
           totalPrice: 6500000,
           yieldPercent: 9.25,
           soldPercent: 75,
@@ -43,7 +46,8 @@ export class DealsService implements OnModuleInit {
         },
         {
           title: 'Al Yaqoub Tower',
-          imageUrl: 'http://localhost:3000/images/al-yaqoub-tower.jpg',
+          imageUrl:
+            'https://zenbit-backend-pdc6.onrender.com/images/al-yaqoub-tower.jpg',
           totalPrice: 6500000,
           yieldPercent: 9.25,
           soldPercent: 75,
