@@ -11,7 +11,7 @@ export class DealsService implements OnModuleInit {
   ) {}
 
   async onModuleInit() {
-    await this.dealRepo.delete({});
+    await this.dealRepo.clear();
 
     await this.dealRepo.save([
       {
