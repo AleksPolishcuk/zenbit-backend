@@ -19,7 +19,7 @@ import { ApplicationsModule } from './applications/applications.module';
           type: 'postgres',
           url,
           autoLoadEntities: true,
-          synchronize: true, // або false якщо є міграції
+          synchronize: true,
           ssl: url?.includes('render.com')
             ? { rejectUnauthorized: false }
             : false,
