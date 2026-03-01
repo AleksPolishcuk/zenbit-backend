@@ -17,7 +17,7 @@ export class DealsService implements OnModuleInit {
         {
           title: 'The Marina Torch',
           imageUrl:
-            'https://images.unsplash.com/photo-1567521464027-f127ff144326?w=800',
+            'https://res.cloudinary.com/dh5i9exjr/image/upload/v1772354228/marina-torch_t18joh.jpg',
           totalPrice: 6500000,
           yieldPercent: 9.25,
           soldPercent: 75,
@@ -27,7 +27,7 @@ export class DealsService implements OnModuleInit {
         {
           title: 'HHHR Tower',
           imageUrl:
-            'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800',
+            'https://res.cloudinary.com/dh5i9exjr/image/upload/v1772354234/hhhr-tower_mwadni.jpg',
           totalPrice: 6500000,
           yieldPercent: 9.25,
           soldPercent: 75,
@@ -37,7 +37,7 @@ export class DealsService implements OnModuleInit {
         {
           title: 'Ocean Peaks',
           imageUrl:
-            'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800',
+            'https://res.cloudinary.com/dh5i9exjr/image/upload/v1772354215/ocean-peaks_p6tkhs.jpg',
           totalPrice: 6500000,
           yieldPercent: 9.25,
           soldPercent: 75,
@@ -47,7 +47,7 @@ export class DealsService implements OnModuleInit {
         {
           title: 'Al Yaqoub Tower',
           imageUrl:
-            'https://images.unsplash.com/photo-1582407947304-fd86f28f958f?w=800',
+            'https://res.cloudinary.com/dh5i9exjr/image/upload/v1772354186/al-yaqoub-tower_vuzmon.jpg',
           totalPrice: 6500000,
           yieldPercent: 9.25,
           soldPercent: 75,
