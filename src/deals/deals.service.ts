@@ -2,15 +2,19 @@ import { Injectable, OnModuleInit } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Deal } from './entities/deal.entity';
+import { Application } from '../applications/entities/application.entity';
 
 @Injectable()
 export class DealsService implements OnModuleInit {
   constructor(
     @InjectRepository(Deal)
     private readonly dealRepo: Repository<Deal>,
+    @InjectRepository(Application)
+    private readonly appRepo: Repository<Application>,
   ) {}
 
   async onModuleInit() {
+    await this.appRepo.clear();
     await this.dealRepo.clear();
 
     await this.dealRepo.save([
